@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        var cnt = 0;
+        function lotate01() {
+            if (cnt < 6) {
+                cnt++;
+            } else {
+                cnt = 2;
+            }
+            var imgbox01 = document.querySelector('#imgBox1');
+            console.log(imgbox01);
+            imgbox01.outerHTML = '<img src="imgs/B0' + cnt + '.jpg" />';
+            var imgbox02 = document.querySelector('#imgBox2');
+            imgbox02.outerHTML = "<img src=\"imgs/B0" + cnt + ".jpg\" />";
+            var imgbox03 = document.querySelector('#imgBox3');
+            imgbox03.outerHTML = "<img src=\"imgs/B0" + cnt + ".jpg\" />";
+            setTimeout(lotate01, 1000);
+        }
+
+    </script>
+    <style type="text/css">
+        * {
+            border: 1px solid black;
+        }
+
+        section>img {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body onload="lotate01()">
+    <header>
+        <h1> 이미지를 돌려보자</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+        </ul>
+    </nav>
+    <section>
+        <img id="imgBox1" src="imgs/B01.jpg" />
+        <img id="imgBox2" src="imgs/B02.jpg" />
+        <img id="imgBox3" src="imgs/B03.jpg" />
+    </section>
+    <footer>
+
+    </footer>
+</body></html>

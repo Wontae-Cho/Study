@@ -1,0 +1,112 @@
+{
+  "C:\\java\\eclipse\\workspace\\java10\\src": {
+    "location": "C:\\java\\eclipse\\workspace\\java10\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\java\\eclipse\\workspace\\java10\\src\u0027. Skipped."
+  },
+  "C:\\Program Files\\Java\\jre1.8.0_201\\lib\\rt.jar": {
+    "location": "C:\\Program Files\\Java\\jre1.8.0_201\\lib\\rt.jar",
+    "status": "UNRESOLVED",
+    "error": "Could not transfer artifact jre:jre:zip:call:1.0.0 from/to remote-models (http://download.eclipse.org/recommenders/models/juno/): Error transferring file, server returned status code 307"
+  },
+  "C:\\java\\eclipse\\workspace\\java11\\src": {
+    "location": "C:\\java\\eclipse\\workspace\\java11\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\java\\eclipse\\workspace\\java11\\src\u0027. Skipped."
+  },
+  "C:\\java\\eclipse\\workspace\\java12\\src": {
+    "location": "C:\\java\\eclipse\\workspace\\java12\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\java\\eclipse\\workspace\\java12\\src\u0027. Skipped."
+  },
+  "C:\\java\\eclipse\\workspace\\java13\\src": {
+    "location": "C:\\java\\eclipse\\workspace\\java13\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\java\\eclipse\\workspace\\java13\\src\u0027. Skipped."
+  },
+  "C:\\java\\eclipse\\workspace\\java14\\src": {
+    "location": "C:\\java\\eclipse\\workspace\\java14\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\java\\eclipse\\workspace\\java14\\src\u0027. Skipped."
+  },
+  "C:\\java\\eclipse\\workspace\\yoonLecture\\src": {
+    "location": "C:\\java\\eclipse\\workspace\\yoonLecture\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\java\\eclipse\\workspace\\yoonLecture\\src\u0027. Skipped."
+  },
+  "C:\\java\\eclipse\\workspace\\aprilFifteenth\\src": {
+    "location": "C:\\java\\eclipse\\workspace\\aprilFifteenth\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\java\\eclipse\\workspace\\aprilFifteenth\\src\u0027. Skipped."
+  },
+  "C:\\java\\eclipse\\workspace\\java15\\src": {
+    "location": "C:\\java\\eclipse\\workspace\\java15\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\java\\eclipse\\workspace\\java15\\src\u0027. Skipped."
+  },
+  "C:\\java\\eclipse\\workspace\\java16\\src": {
+    "location": "C:\\java\\eclipse\\workspace\\java16\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\java\\eclipse\\workspace\\java16\\src\u0027. Skipped."
+  },
+  "C:\\java\\eclipse\\workspace\\programers\\src": {
+    "location": "C:\\java\\eclipse\\workspace\\programers\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\java\\eclipse\\workspace\\programers\\src\u0027. Skipped."
+  },
+  "C:\\java\\eclipse\\workspace\\java18\\src": {
+    "location": "C:\\java\\eclipse\\workspace\\java18\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\java\\eclipse\\workspace\\java18\\src\u0027. Skipped."
+  },
+  "C:\\java\\eclipse\\workspace\\java21\\src": {
+    "location": "C:\\java\\eclipse\\workspace\\java21\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\java\\eclipse\\workspace\\java21\\src\u0027. Skipped."
+  },
+  "C:\\java\\eclipse\\workspace\\solo\\src": {
+    "location": "C:\\java\\eclipse\\workspace\\solo\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\java\\eclipse\\workspace\\solo\\src\u0027. Skipped."
+  },
+  "C:\\java\\eclipse\\workspace\\java22\\src": {
+    "location": "C:\\java\\eclipse\\workspace\\java22\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\java\\eclipse\\workspace\\java22\\src\u0027. Skipped."
+  },
+  "C:\\Program Files\\Java\\jre1.8.0_201\\lib\\ext\\jfxrt.jar": {
+    "location": "C:\\Program Files\\Java\\jre1.8.0_201\\lib\\ext\\jfxrt.jar",
+    "status": "UNRESOLVED",
+    "error": "Could not transfer artifact jre:jre:zip:call:1.0.0 from/to remote-models (http://download.eclipse.org/recommenders/models/juno/): Error transferring file, server returned status code 307"
+  },
+  "C:\\java\\eclipse\\workspace\\java25\\src": {
+    "location": "C:\\java\\eclipse\\workspace\\java25\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\java\\eclipse\\workspace\\java25\\src\u0027. Skipped."
+  },
+  "C:\\java\\eclipse\\workspace\\java26\\src": {
+    "location": "C:\\java\\eclipse\\workspace\\java26\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\java\\eclipse\\workspace\\java26\\src\u0027. Skipped."
+  },
+  "C:\\java\\eclipse\\workspace\\first\\src": {
+    "location": "C:\\java\\eclipse\\workspace\\first\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\java\\eclipse\\workspace\\first\\src\u0027. Skipped."
+  },
+  "C:\\java\\eclipse\\workspace\\together\\src": {
+    "location": "C:\\java\\eclipse\\workspace\\together\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\java\\eclipse\\workspace\\together\\src\u0027. Skipped."
+  },
+  "C:\\java\\workspace\\jdbc01\\src": {
+    "location": "C:\\java\\workspace\\jdbc01\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\java\\workspace\\jdbc01\\src\u0027. Skipped."
+  },
+  "C:\\java\\workspace\\java27\\src": {
+    "location": "C:\\java\\workspace\\java27\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\java\\workspace\\java27\\src\u0027. Skipped."
+  }
+}

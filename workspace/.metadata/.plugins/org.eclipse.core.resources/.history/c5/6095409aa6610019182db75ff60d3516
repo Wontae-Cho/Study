@@ -1,0 +1,36 @@
+package com.bit.pm;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+
+public class Ex01Lecture {
+
+	public static void main(String[] args) {
+//		int[] score = new int[3];
+		List<Integer> data = new ArrayList<Integer>();
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("--------------------------------------");
+		System.out.println("학생성적관리프로그램(ver 1.2.0)");
+		System.out.println("--------------------------------------");
+		String tmpInput = null;
+		
+		while(true){
+			System.out.print("1.보기 2.입력 3.수정 4.삭제 0.종료>");
+			tmpInput=sc.nextLine();
+			if(tmpInput.equals("0")){break;}
+			if(tmpInput.equals("1")){
+				System.out.println("--------------------------------------");
+				System.out.println("학번\t|국어\t|영어\t|수학\t");
+				System.out.println("--------------------------------------");
+				///
+			}else if(tmpInput.equals("2")){
+				
+			}
+		}
+		System.out.println("이용해주셔서 감사합니다.");
+	}
+
+}

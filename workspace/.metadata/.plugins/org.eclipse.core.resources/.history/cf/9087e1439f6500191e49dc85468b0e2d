@@ -1,0 +1,30 @@
+package com.bit.scanner;
+
+import java.io.*;
+import java.util.Scanner;
+
+public class Ex09 {
+
+/*
+ * (문자열 스트림) data = txt파일에.
+ * 학생성적관리프로그램(ver0.3.2)
+ * 
+ * 
+ * 
+ * 
+ */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//읽어와야하는데. 없으면 생성.
+		File file = new File("backup2");
+		file.mkdir();
+		file = new File("backup2\\studata.txt");
+		
+		
+		System.out.println("---------------------------------------------");
+		System.out.println("학생성적관리프로그램(ver 0.3.2)");
+		System.out.println("---------------------------------------------");
+
+	}
+
+}

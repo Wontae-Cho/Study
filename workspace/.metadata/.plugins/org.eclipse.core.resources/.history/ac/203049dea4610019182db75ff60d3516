@@ -1,0 +1,19 @@
+package com.bit.pm;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class Ex01Lecture {
+
+	public static void main(String[] args) {
+		List<己利> data = new ArrayList<己利>();
+		
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+		System.out.println("--------------------------------------");
+		System.out.println("切积己利包府橇肺弊伐(ver 1.2.0)");
+		System.out.println("--------------------------------------");
+
+	}
+
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            body>*{
+                margin: 0px;
+            }
+            h1{
+                background-color: brown;
+            }
+            h2{
+                background-color: aqua;
+                width: 300px;
+                height: 100px;
+                margin : 0px;
+            }
+            a:nth-child(8){
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 박스레벨에서는 넓이와 높이를 지정할 수 있는데 그 때 단위를 필수적으로 명세해줘야함.
+            박스레벨에서는 옆으로 와도 충분한 공간임에도 불구하고 아래로 붙는다. -->
+        <h1>박스모델링</h1>
+        <h2>박스레벨</h2>
+        <h2>박스레벨</h2>
+        <p>내용</p>
+        <p>내용</p>
+        <p>내용</p>
+        인라인레벨
+        <!-- 인라인레벨은 옆으로 늘어저 간다. 만약 한 페이지에 표현할 수 있는 
+                범위가 넘어가면 자동으로 개행됨. 
+            또한 인라인레벨의 사이즈는 컨텐츠 크기에 따라서 결정된다.
+            html에서의 개행과 우리가 보는 개행이 다르기 때문에 주의해야한다.-->
+        <a href="#">link1</a><a href="#">link2</a>
+        <a href="#">link3</a>
+        <img alt="logo" src=""/>
+        <img alt="logo" src=""/>
+    </body>
+</html>

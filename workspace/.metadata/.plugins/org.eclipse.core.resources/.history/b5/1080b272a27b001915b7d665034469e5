@@ -1,0 +1,24 @@
+package com.bit;
+
+public class MyMain {
+
+	public static void main(String[] args){
+		//Car car=new Car();
+		String info="com.bit.Car";
+		Class clz;
+		Object obj;
+		try {
+			clz = Class.forName(info);
+			obj = clz.newInstance();
+			Car car = (Car)obj;
+			car.startCar();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

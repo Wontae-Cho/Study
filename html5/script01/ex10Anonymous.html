@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            // 함수
+            // 일반함수는 바로 로딩되어 시작되기 때문에 바로 사용가능.
+            function myfunc2(a){
+                console.log(typeof a);
+                console.log(a.key1);
+            }
+            
+            console.log('-------------------');
+            // 익명함수
+            // 익명함수의 경우 변수의 선언 부분까지 내려와야 해당 함수를 사용할 수 있다. 로딩은 되어 있으나 부를 참조변수가 존재하지 않기 때문에.
+            var myfunc=(function(){
+                console.log('size:'+arguments.length);
+                for(var i=0; i<arguments.length; i++){
+                    console.log(arguments[i]);
+                }
+            });
+            
+            // 콜백함수 - 함수를 인자로 받는 함수.
+        // 실행의 시점은 프로그램이 결정하는 것이고 어떤일을 실행할건지 결정
+//            myfunc2(function(){
+//                alert('실행');
+//            });
+            function myclick(){
+                alert('실행');
+            };
+            
+//            var obj={'key':myfunc};
+            
+//            myfunc(1,3,5);
+//            obj.key(1,3,5);
+//            console.log(typeof obj.key);
+            // 자료형이 function타입.
+//            console.log(window.myfunc);
+//            console.log(typeof myfunc);
+            
+        </script>
+        <script type="text/javascript">
+            
+        </script>
+    </head>
+    <body>
+        <h1>function</h1>
+        <input type="button" onclick="myclick()" value="버튼"/>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+package com.bit;
+
+class Tv{
+	public void on() {
+		System.out.println("tv¸¦ ÄÑ´Ù");
+	}
+}
+class Radio{
+	
+}
+class Audio{
+	
+}
+
+public class Remote {
+
+}

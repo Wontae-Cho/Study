@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+        #source{
+            display: none;
+        }
+        </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            msg=$('#source').html();
+            loop();
+            };
+        function loop(){
+            if($('#source').html().trim()==''){
+                $('#source').html(msg);
+            }
+           var first= $('#source>img:first');
+            $('#target').html(first);
+            window.setTimeout(loop,3000);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="target"></div>
+    <div id="source">
+        <img alt="s" src="imgs/S01.jpg" />
+        <img alt="s" src="imgs/S02.jpg" />
+        <img alt="s" src="imgs/S03.jpg" />
+        <img alt="s" src="imgs/S04.jpg" />
+        <img alt="s" src="imgs/S05.jpg" />
+        <img alt="s" src="imgs/S06.jpg" />
+    </div>
+
+</body></html>

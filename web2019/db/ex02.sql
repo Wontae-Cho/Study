@@ -1,1 +1,0 @@
-select ename from emp;

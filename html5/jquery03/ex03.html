@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css" />
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="js/jquery.bxslider.js"></script>
+    <script type="text/javascript">
+        var bx;
+        $(document).ready(function() {
+            bx=$('.slider').bxSlider({
+                /*auto: true,
+                speed:2000,
+                captions:true,
+                slideMargin:100, //슬라이드사이의 공간
+                minSlides:1,
+                maxSlides:3,
+                slideWidth:320,
+                moveSlides:1,
+                controls:true,
+                prevSelector:$('#myPrev'),
+                nextSelector:$('#myNext'),
+                prevText:'[이전]',
+                nextText:'[이후]',
+                autoControls:true,
+                pager:false*/
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="slider">
+        <div><img title="img01" alt="s" src="imgs/B01.jpg"></div>
+        <div><img title="img02" alt="s" src="imgs/B02.jpg"></div>
+        <div><img title="img03" alt="s" src="imgs/B03.jpg"></div>
+        <div><img title="img04" alt="s" src="imgs/B04.jpg"></div>
+        <div><img title="img05" alt="s" src="imgs/B05.jpg"></div>
+        <div><img title="img06" alt="s" src="imgs/B06.jpg"></div>
+    </div>
+    <a id="myPrev" href="#"></a>
+    <a id="myNext" href="#"></a>
+</body></html>

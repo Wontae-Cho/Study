@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> Title </title>
+    <style type="text/css">
+        div{
+            width: 300px;
+            height: 100px;
+            background-color: aquamarine;
+        }
+    </style>
+    <script type="text/javascript">
+        var h1,btn,div,input,ele;
+        // onload에 펑션을 등록.
+        window.onload=function(){
+            h1=document.querySelector('h1');
+            btn=document.querySelector('button');
+            div=document.querySelector('div');
+            input=document.querySelector('input');
+            var mybtn=function(){
+            alert('클릭');
+            }
+            btn.onclick=mybtn;
+            h1.onclick=mybtn;
+//            div.onclick=mybtn;    //마우스 클릭
+//            div.onmouseover=mybtn;//마우스가 엘리먼트위로 올라오면
+//            div.onmouseout=mybtn; //마우스가 엘리먼트위에 있다가 빠져나가면.
+//            div.onmouseup=mybtn;  //마우스버튼(눌렸다가) 올라올 때.
+//            div.onmousedown=mybtn;//마우스가 내려가는 순간.
+            input.onkeydown=function(){ // 키보드가 눌릴 때.
+//              console.log('down');  
+            };
+            input.onkeypress=function(){ // 키보드가 눌려있을 때
+//              console.log('press');  
+            };
+            var cnt=0;
+            input.onkeyup=function(e){ // 키보드가 올라올 때.
+                console.log(e.key);
+                if(e.key=='ArrowRight'){
+                    cnt+=10;
+                    div.style.marginLeft=cnt+'px';
+                }
+//              console.log('up');  
+            };
+        };
+    </script>
+    
+</head>
+
+<body>
+<h1>이벤트</h1>
+<p>윈도우 이벤트 = onload,onresize</p>
+<button>버튼1</button>
+<h2>마우스이벤트</h2>
+<p></p>
+<h2>키보드이벤트</h2>
+<p></p>
+<div>
+    box
+</div>
+<input type="text"/>
+
+</body></html>

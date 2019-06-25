@@ -1,0 +1,9 @@
+package com.bit.pm;
+
+public class Ex01Lecture {
+
+	public static void main(String[] args) {
+
+	}
+
+}

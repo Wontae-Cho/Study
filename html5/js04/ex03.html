@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        
+       
+          var btn=document.querySelector('button');
+            var btnClk=function(){
+              alert('버튼이 클릭됨');  
+            };  
+            var btnClk2=function(){
+                console.log('버튼이 클릭됨2');
+            };
+           
+   
+         window.onload=function(){
+                var btn=document.querySelector('button');
+                console.log(btn.style.backgroundColor);
+             
+             //            btn.onclick=btnClk; //level 1
+//            btn.onclick=btnClk2;  //console로 바꿔서 console에서 출력된다.
+            
+            btn.addEventListener('click',btnClk);//level 2
+            btn.addEventListener('click',btnClk2);//level 2
+            btn.addEventListener('click',function(){
+                btn.innerText='수정';
+            });//이거는 익명함수라 지울라면 못지움, 제어를 할 수가없음
+             
+             btn.removeEventListener('click',btnClk);
+            //똑같은 이벤트를 다중으로 나오게 할 수 있다 level1은 안됨 값을 바꾸는거라 마지막 값 하나만 적용됨.
+            };
+    </script>
+   
+</head>
+<body>
+    <h1>js event level2 </h1>
+    <button>버튼</button>
+</body>
+</html>

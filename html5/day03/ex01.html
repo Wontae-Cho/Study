@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                word-wrap: break-word;
+                width: 200px;
+                height: 100px;
+                background-color: aqua;
+                /* 블럭밖으로 넘어가게 되면 안보이게 처리함. */
+                /* default값은 visible */
+            /* scroll으로 처리시 넘어간 내용을 볼수있도록 스크롤바를 생성 */
+/* auto는 가로로 넘어간 내용, 세로로 넘어간 내용에 따라서 자동으로 생성해줌 */
+                /* hidden은 블럭밖으로 넘어간 내용은 보여주지 않음. */
+                /*overflow: auto;*/
+                overflow-x: hidden;
+                overflow-y: scroll;
+            }
+        </style>
+    </head>
+    <body>
+        <div>javajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajava
+        </div>
+    </body>
+</html>

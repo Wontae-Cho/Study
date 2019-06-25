@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            h1+div{
+                position: absolute;
+                left: 200px;
+                top:200px;
+            }
+            div{
+                word-wrap: break-word;
+                width: 200px;
+                height: 200px;
+                background-color: gray;
+                border : 1px solid red;
+                opacity: 1;
+            }
+            div>div{
+                /* absolute에 absolute는 종속된 대상이 기준이 된다. */
+                /* absolute에 relative는 자신이 원래 있어야할 위치를 기준으로 한다.*/
+                /* absolute에 fixed는 부모와 상관없이 페이지 기준. */
+                background-color: aqua;
+                position: fixed;
+                top : 0px;
+                left : 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>absolute</h1>
+        <div>box1
+            <div>box2</div>
+        </div>
+        <div>box3</div>
+    </body>
+</html>

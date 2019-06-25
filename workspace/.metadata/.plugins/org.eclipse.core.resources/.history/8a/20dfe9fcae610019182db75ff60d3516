@@ -1,0 +1,64 @@
+package com.bit.pm;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Ex01Lecture2 {
+
+	public static void main(String[] args) {
+		// int[] 성적 = new int[3];
+		List<int[]> data = new ArrayList<int[]>();
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("--------------------------------------");
+		System.out.println("학생성적관리프로그램(ver 1.2.0)");
+		System.out.println("--------------------------------------");
+		String input = null;
+		int num = 201900;
+
+		while (true) {
+			System.out.print("1.보기 2.입력 3.수정 4.삭제 0.종료>");
+			input = sc.nextLine();
+			if(input.equals("0")){break;}
+			if(input.equals("1")){
+				System.out.println("--------------------------------------");
+				System.out.println("학번\t|국어\t|영어\t|수학\t");
+				System.out.println("--------------------------------------");
+				for(int i=0; i<data.size(); i++){
+					int[] stu = data.get(i);
+					for(int j=0; j<stu.length; j++){
+						if(j!=0){
+							System.out.print("\t|");
+						}
+						System.out.print(stu[j]);
+					}
+					System.out.println();
+				}
+			}else if(input.equals("2")){
+				int[] stu = new int[4];
+				stu[0] = ++num;
+				System.out.print("국어>");
+				input=sc.nextLine();
+				stu[1] = Integer.parseInt(input);
+
+				System.out.print("영어>");
+				input=sc.nextLine();
+				stu[2] = Integer.parseInt(input);
+	
+
+				System.out.print("수학>");
+				input=sc.nextLine();
+				stu[3] = Integer.parseInt(input);
+	
+				
+			}else if(input.equals("3")){
+				
+			}else if(input.equals("4")){
+				
+			}
+		}
+		System.out.println("이용해주셔서 감사합니다");
+	}
+
+}

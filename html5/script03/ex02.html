@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+        function myload(){
+            var body=document.querySelector('body');
+//            console.log(body.innerHTML); 
+//            console.log(body.innerText);
+            var h1=document.querySelector('h1');
+//            inner : 자식노드들의 제어.
+//            outer : 타겟으로 선택된 자신의 노드를 제어.
+//            HTML :
+//            Text :
+            // innerText는 그대로 보여줌. 
+//            h1.innerText="<a href='#'>텍스트노드</a>를 바꿉니다.";
+            // innerHTML은 <a></a>가 작동하게 됨.
+//            h1.innerHTML="<a href='#'>텍스트노드</a>를 바꿉니다.";
+            // outerHTML은 타겟으로 선택된 자기 자신이 바뀜.
+//            h1.outerHTML="<a href='#'>텍스트노드</a>를 바꿉니다.";
+            // outerText
+//            h1.outerText="<a href='#'>텍스트노드</a>를 바꿉니다.";
+            chgImg();
+        }
+        var cnt=0;
+        function chgImg(){
+            if(cnt<6){
+                cnt++;
+            }else{
+                cnt=1;
+            }
+            var img=document.querySelector('img');
+            img.outerHTML="<img src=\"imgs/B0"+cnt+".jpg\" />";
+            setTimeout(chgImg,3000);
+        }
+    </script>
+</head>
+<body onload="myload()">
+    <h1>innerHTML</h1>
+    <p>자식노드를 작성합니다</p>
+    <img src="imgs/B01.jpg" />
+</body>
+</html>

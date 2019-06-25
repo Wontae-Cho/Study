@@ -1,0 +1,11 @@
+package com.bit;
+
+public class MyMain {
+
+	public static void main(String[] args){
+		//Car car=new Car();
+		String info="com.bit.Car";
+		
+		car.startCar();
+	}
+}

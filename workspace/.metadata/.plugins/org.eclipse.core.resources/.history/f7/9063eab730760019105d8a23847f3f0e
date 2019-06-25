@@ -1,0 +1,336 @@
+package com.bit.student;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Properties;
+import java.util.Scanner;
+
+import oracle.jdbc.driver.OracleDriver;
+
+public class LMSSystem2 {
+
+	/*
+	 * ---------------------------------------------------
+	 * 성적관리프로그램(ver 0.5.1)
+	 * ---------------------------------------------------
+	 * 1. 학생등록 2. 학생삭제 3.학생보기
+	 * 4. 성적보기 5. 성적입력 6.성적수정 0.종료>
+	 * 등록 (학번,이름)
+	 * 성적 (학번,국어,영어,수학)
+	 * 
+	 * 
+	 * 
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("--------------------------------------");
+		System.out.println("성적관리프로그램(ver 0.5.1)");
+		System.out.println("--------------------------------------");
+		
+		String input = null;
+		//학번 - 데이터베이스로부터 받아내야함.
+		int stunum = 0;
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String id = "scott";
+		String pw = "tiger";
+		// id와 pw입력을 필요로 함
+		Properties prop = new Properties();
+		prop.put("user", id);
+		prop.put("password", pw);
+		
+		// 드라이버 로딩
+		OracleDriver driver = new OracleDriver();
+		
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+
+		// 시작
+		while(true){
+			System.out.print("1. 학생등록 2. 학생삭제 3.학생보기\n 4. 성적보기 5. 성적입력 6.성적수정 0.종료 > ");
+			input = sc.nextLine();
+			// 종료
+			if(input.equals("0")){break;}
+			// 학생등록
+			if(input.equals("1")){
+				// 데이터베이스로부터 학번의 맥스값 +1 을 받아와야함
+				// 처음 실행시 문제가 될 수 있음. 따라서 null 일때 0으로 고정해야함.
+				// select max(num) from student01;
+				String enrollsql = "select nvl(max(stunum),0)+1 from student";
+				// nullvalue = 1이고 아닐때는 max(num)+1을 함.
+				
+				try {
+					conn = DriverManager.getConnection(url,prop);
+					// conn = DriverManager.getConnection("jdbc:oracle:thin:scott/tiger@localhost:1521:xe");
+					// getConnection("jdbc:oracle:thin:@localhost:1521:xe" , "scott", "tiger");
+					stmt = conn.createStatement();
+					rs = stmt.executeQuery(enrollsql);
+					// 커서를 옮기고
+					rs.next();
+					stunum = rs.getInt(1);
+					
+					
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}finally{
+					try {
+						if(rs!=null){rs.close();}
+						if(stmt!=null){stmt.close();}
+						if(conn!=null){conn.close();}
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+				// 학번입력
+				System.out.print("학번 > ");
+				input = sc.nextLine();
+				stunum = Integer.parseInt(input);
+				// 이름입력
+				System.out.print("이름 > ");
+				String stuname = sc.nextLine();
+				
+				String sql = "insert into student (stunum,stuname) values(";
+				sql+=stunum+",'"+stuname+"')";
+				
+				try {
+					conn=DriverManager.getConnection(url,prop);
+					stmt = conn.createStatement();
+					stmt.executeUpdate(sql);
+					
+				} catch (SQLException e) {
+					e.printStackTrace();
+				} finally{
+					try {
+						if(stmt!=null){stmt.close();}
+						if(conn!=null){conn.close();}
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+				
+			// 학생삭제
+			}else if(input.equals("2")){
+				//누구를 삭제할지 .. 학번
+				System.out.print("학번 > ");
+				input=sc.nextLine();
+				// input 좌우의 공백을 잘라줌.
+				input = input.trim(); 
+				int target = 0;
+				try{
+					target = Integer.parseInt(input);
+				}catch(java.lang.NumberFormatException e){
+					System.out.println("입력이 잘못되었습니다");
+					continue;
+				}
+				int result = 0;
+				
+				String parentsSql="delete from student where stunum = "+target;
+				String childSql = "delete from studentscore where num="+target;
+				
+				try {
+					conn=DriverManager.getConnection(url,prop);
+					stmt = conn.createStatement();
+					stmt.executeUpdate(childsql);
+					result = stmt.executeUpdate(parentssql);
+					
+				} catch (SQLException e) {
+					e.printStackTrace();
+				} finally{
+					try {
+						if(stmt!=null){stmt.close();}
+						if(conn!=null){conn.close();}
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+				if(result>0){
+					System.out.println("삭제되었습니다.");
+				}else{
+					System.out.println("\t존재하지않습니다.");
+				}
+			// 학생보기
+			}else if(input.equals("3")){
+				System.out.println("--------------------------------------");
+				System.out.println("학번\t이름");
+				System.out.println("--------------------------------------");
+				String showsql = "select * from student order by stunum asc";
+				try {
+					conn=DriverManager.getConnection(url,prop);
+					stmt = conn.createStatement();
+					rs = stmt.executeQuery(showsql);
+					// rs.next()가 트루일 경우만 하면 되니까
+					while(rs.next()){
+						System.out.print(rs.getInt(1)+"\t"); //학번
+						System.out.println(rs.getString(2)); //이름
+					}
+					
+				} catch (SQLException e) {
+					e.printStackTrace();
+				} finally{
+					try {
+						if(rs!=null){rs.close();}
+						if(stmt!=null){stmt.close();}
+						if(conn!=null){conn.close();}
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+			
+			// 성적보기
+			}else if(input.equals("4")){
+				System.out.print("학번 > ");
+				input=sc.nextLine();
+				// input 좌우의 공백을 잘라줌.
+				input = input.trim();
+				stunum = Integer.parseInt(input);
+				System.out.println("--------------------------------------");
+				System.out.println("학번\t국어\t영어\t수학");
+				System.out.println("--------------------------------------");
+				String showsql = "select * from studentscore where num ="+stunum;
+				try {
+					conn=DriverManager.getConnection(url,prop);
+					stmt = conn.createStatement();
+					rs = stmt.executeQuery(showsql);
+					// rs.next()가 트루일 경우만 하면 되니까
+					while(rs.next()){
+						System.out.print(rs.getInt(1)+"\t"); //학번
+						System.out.print(rs.getInt(2)+"\t"); //국어
+						System.out.print(rs.getInt(3)+"\t"); //영어
+						System.out.println(rs.getInt(4)); //수학
+					}
+					
+				} catch (SQLException e) {
+					e.printStackTrace();
+				} finally{
+					try {
+						if(rs!=null){rs.close();}
+						if(stmt!=null){stmt.close();}
+						if(conn!=null){conn.close();}
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+				
+				
+			// 성적입력
+			}else if(input.equals("5")){
+				// 학번을 가져와서 그것이 student 테이블에 있는 것인지 확인해야함.
+				// 누구의 성적을 입력할지.. 학번
+				System.out.print("학번 > ");
+				input=sc.nextLine();
+				// input 좌우의 공백을 잘라줌.
+				input = input.trim();
+				stunum = Integer.parseInt(input);
+//				try {
+//					conn = DriverManager.getConnection(url,prop);
+//					stmt = conn.createStatement();
+//					String comparesql = "select stunum from student where stunum="+stunum;
+//					rs = stmt.executeQuery(comparesql);
+//					// 커서를 옮기고
+//					rs.next();
+//					stunum = rs.getInt(1);
+//					
+//				} catch (SQLException e1) {
+//					e1.printStackTrace();
+//				}finally{
+//					try {
+//						if(rs!=null){rs.close();}
+//						if(stmt!=null){stmt.close();}
+//						if(conn!=null){conn.close();}
+//					} catch (SQLException e) {
+//						e.printStackTrace();
+//					}
+//				}
+
+				// 국어점수입력
+				System.out.print("국어 > ");
+				input = sc.nextLine();
+				int kor = Integer.parseInt(input);
+				// 영어점수입력
+				System.out.print("영어 > ");
+				input = sc.nextLine();
+				int eng = Integer.parseInt(input);
+				// 수학점수입력
+				System.out.print("수학 > ");
+				input = sc.nextLine();
+				int math = Integer.parseInt(input);
+				
+				String sql = "insert into studentscore (num,kor,eng,math) values(";
+				sql+=stunum+","+kor+","+eng+","+math+")";
+				
+				try {
+					conn=DriverManager.getConnection(url,prop);
+					stmt = conn.createStatement();
+					stmt.executeUpdate(sql);
+					
+				} catch (SQLException e) {
+//					e.printStackTrace();
+					System.out.println("해당학번은 존재하지않아 !! ");
+				} finally{
+					try {
+						if(stmt!=null){stmt.close();}
+						if(conn!=null){conn.close();}
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+				
+			// 성적수정
+			}else if(input.equals("6")){
+				// 누구를 수정할지 .. 학번
+				System.out.print("학번 > ");
+				input = sc.nextLine();
+				int target = Integer.parseInt(input);
+				int result = 0;
+				
+				// 국어점수입력
+				System.out.print("국어 > ");
+				input = sc.nextLine();
+				int kor = Integer.parseInt(input);
+				// 영어점수입력
+				System.out.print("영어 > ");
+				input = sc.nextLine();
+				int eng = Integer.parseInt(input);
+				// 수학점수입력
+				System.out.print("수학 > ");
+				input = sc.nextLine();
+				int math = Integer.parseInt(input);
+				
+				String sql = "update studentscore set kor=";
+				sql += kor+",eng="+eng+",math="+math+" where num="+target;
+				
+				try {
+					conn = DriverManager.getConnection(url,id,pw);
+					stmt = conn.createStatement();
+					result = stmt.executeUpdate(sql);
+					
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}finally {
+					try {
+						if(stmt!=null){stmt.close();}
+						if(conn!=null){conn.close();}
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+				if(result>0){
+					System.out.println("수정완료");
+				}else{
+					System.out.println("\tErr)수정실패");
+				}
+				
+			}else{
+				System.out.println("메뉴를 다시 확인하시고 입력해주세요.");
+			}
+			
+		}
+		System.out.println("이용해주셔서 감사합니다.");
+
+	}
+
+}

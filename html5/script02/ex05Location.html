@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+//            window.location.href="http://naver.com";
+            // window.location;
+            /*
+            ancestorOrigins: DOMStringList {length: 0}
+            assign: ƒ assign()
+            hash: ""
+            host: "127.0.0.1:49473"
+            hostname: "127.0.0.1"
+            href: "http://127.0.0.1:49473/script02/ex04Screen.html"
+            origin: "http://127.0.0.1:49473"
+            pathname: "/script02/ex04Screen.html"
+            port: "49473"
+            protocol: "http:"
+            */
+            console.log(location.host);
+            console.log(location.hostname);
+            console.log(location.href); // 자주사용.
+// 문자열을 입력하지 않으면 현재 있는 곳의 주소를 주지만, 주소를 주면 해당 주소로 이동한다.
+            console.log(location.origin);
+            console.log(location.pathname);
+            console.log(location.port);
+            console.log(location.protocol);
+            /*
+            ///////////////////////
+            사용하게될 펑션.
+            reload: ƒ reload()  = 새로고침.
+            window.location.reload;
+            replace: ƒ ()       = 주소를 주었을 시 페이지 이동.
+            window.location.replace('http://google.com');
+            기왕이면 프로퍼티보다 기능을 이용하는 것이 좋음.
+            ////////////////////
+            
+            search: ""
+            toString: ƒ toString()
+            valueOf: ƒ valueOf()
+            */
+        </script>
+    </head>
+    <body>
+        <h1>Location</h1>
+    </body>
+</html>

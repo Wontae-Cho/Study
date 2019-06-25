@@ -1,0 +1,32 @@
+page 193.
+1.
+	(1) select bookid,bookname from book where bookid = 1;
+
+	(2) select bookname,price from book where price >=20000;
+
+	(3) select sum(A.saleprice) from orders A inner join customer B on A.custid=B.custid where B.name = '박지성';
+
+	(4) select count(A.bookid) from book A inner join orders B on A.bookid=B.bookid inner join customer C on B.custid=C.custid where C.name = '박지성';
+
+	(5) select count(A.publisher) from book A inner join orders B on A.bookid=B.bookid inner join customer C on B.custid=C.custid where C.name = '박지성';
+
+	(6) select A.bookname,A.price,A.price-B.saleprice from book A inner join orders B on A.bookid=B.bookid inner join customer C on B.custid=C.custid where C.name = '박지성';
+
+	(7) select distinct A.bookname from book A inner join orders B on A.bookid=B.bookid inner join customer C on B.custid = C.custid where C.name <> '박지성';
+
+2. 
+	(1) select count(bookid) from (select * from book union select * from imported_book);
+		create view all_book as select * from book union select * from imported_book;
+		select count(bookid) from all_book;
+	(2) select distinct publisher from all_book;
+
+	(3) select name,address from customer;
+
+	(4) select orderid from orders where orderdate between '14/07/04' and '14/07/07';
+
+	(5) select orderid from orders where orderdate not between '14/07/04' and '14/07/07';
+
+	(6) select address from customer where name like '김__';
+		 select address from customer where name like '김%';
+	(7)  select name, address from customer where name like '김%아';
+		select name, address from customer where name like '김_아';

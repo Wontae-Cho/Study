@@ -1,0 +1,21 @@
+package com.bit;
+
+class Tv{
+	public void on() {
+		System.out.println("tv를 켜다");
+	}
+}
+class Radio{
+	public void on() {
+		System.out.println("Radio를 켜다");
+	}
+}
+class Audio{
+	public void on() {
+		System.out.println("Audio를 켜다");
+	}
+}
+
+public class Remote {
+
+}

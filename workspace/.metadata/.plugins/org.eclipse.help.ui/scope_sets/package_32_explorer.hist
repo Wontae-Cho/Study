@@ -1,0 +1,4 @@
+#Tue Apr 09 19:45:32 KST 2019
+__DEFAULT__=false
+org.eclipse.help.ui.localSearch.master=true
+expression=package explorer

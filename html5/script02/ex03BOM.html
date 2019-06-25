@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var myframe
+            function myOpen(){
+//첫번째인자는 주소, 두번째는창의이름(임의적),세번째는 '넓이,높이'
+            myframe = window.open('ex01BuiltIn.html','my','width=800,height=400,resizable=0');
+            }
+            function myClose(){
+                myframe.close();
+            }
+            function myMove(){
+                myframe.moveTo(200,200); //절대좌표
+                //myframe.moveBy(10,0);   //상대좌표 익스에서만...
+                //myframe.resizeTo(100,100);  // 익스에서만..
+            }
+        </script>
+    </head>
+    <body>
+        <h1>BOM(Browser Object Model)</h1>
+        <input type="button" value="open" onclick="myOpen()"/>
+        <input type="button" value="close" onclick="myClose()"/>
+        <input type="button" value="move" onclick="myMove()"/>
+    </body>
+</html>

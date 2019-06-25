@@ -1,0 +1,63 @@
+package com.bit.pm;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+
+public class Ex01Lecture {
+
+	public static void main(String[] args) {
+//		int[] score = new int[3];
+		List<Integer> data = new ArrayList<Integer>();
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("--------------------------------------");
+		System.out.println("학생성적관리프로그램(ver 1.2.0)");
+		System.out.println("--------------------------------------");
+		String tmpInput = null;
+		int num = 201900;
+		
+		while(true){
+			System.out.print("1.보기 2.입력 3.수정 4.삭제 0.종료>");
+			tmpInput=sc.nextLine();
+			if(tmpInput.equals("0")){break;}
+			if(tmpInput.equals("1")){
+				System.out.println("--------------------------------------");
+				System.out.println("학번\t|국어\t|영어\t|수학\t");
+				System.out.println("--------------------------------------");
+				//~~~
+				for(int i=0; i<; i+=4){
+				System.out.print(data.get(i));
+				System.out.print("\t");
+				System.out.print(data.get(i+1));
+				System.out.print("\t");
+				System.out.print(data.get(i+2));
+				System.out.print("\t");
+				System.out.print(data.get(i+3));
+				System.out.print("\n");
+				}
+			}else if(tmpInput.equals("2")){
+				num++;
+				data.add(num);
+				
+				System.out.print("국어>");
+				tmpInput=sc.nextLine();
+				int kor = Integer.parseInt(tmpInput);
+				data.add(kor);
+				
+				System.out.print("영어>");
+				tmpInput=sc.nextLine();
+				int eng = Integer.parseInt(tmpInput);
+				data.add(eng);
+				
+				System.out.print("수학>");
+				tmpInput=sc.nextLine();
+				int math = Integer.parseInt(tmpInput);
+				data.add(math);
+			}
+		}
+		System.out.println("이용해주셔서 감사합니다.");
+	}
+
+}

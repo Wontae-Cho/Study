@@ -1,0 +1,148 @@
+--------------------------------------------------------------------------------------------------
+
+JQuery 사용시
+
+JQuery.com	// Blog를 통해 Issue 확인 필수.
+		// Plugin을 확인해서 필요한 기능이 있다면 가져다 쓰는 것도 가능.
+		// JQuery Mobile, User Interface 등 을 이용할 수 있음.
+		// JQuery는 하위호환성을 가지지 않는다. 
+		// 새로운 버전의 표현은 마이너 버전으로 표시한다.
+		// 메이저버전의 증가는 디바이스 매체에 따른 증가가 많다.
+		// 2.0.0 대는 모바일에 특화된 버전으로 가장 컴팩트하게 되어있다. 기능도 컴팩트.
+		// 3.0.0 대는 개발의 범위가 확대되면서 나오게 된 것이다.
+		// 일반적으로 pc에서 사용할 경우 2.0.0 대만 피해서 사용하면 된다.
+---------------------------------------------------------------------------------------------------
+	// JQuery는 function으로 선언되어있다.
+	// 선택자를 통해서 엘리먼트를 잡는 방법.
+	// jQuery('h1')
+	// $('h1')
+	// var my = JQuery 등을 통해서 원하는 변수로 설정할 수 있다.
+	// $('li')와 같이 여러개의 요소에도 한번에 적용시킬 수 있다.
+	// $('.cl1')	클래스에 적용.
+	// $('#i1)	아이디에 적용
+	// $('ul>li')	ul아래에 li에 적용
+	// $('ul>.cl1')	ul아래에 클래스 cl1에 적용
+	// $('ul .cl1') ul아래 자손
+	// $('h1+p')	h1 다음 p
+	// $('#i1+li')	아이디 i1
+	// $('#i1~li')	아이디 i1 다음에 등장하는 li들
+	// $('h1,p,.cl1') h1,p,클래스.cl1 다중선택
+	// $('ul>li:nth-child(2n)')
+---------------------------------------------------------------------------------------------------
+	// JQuery를 이용한 node접근 
+	// $('h1').next().css('color','red');
+	// $('h1').next().next.css('color','red');
+	// $('h1').next().next().children().first().css('color','red');
+	// $('h1').next().next().children().first().next().prev().css('color','red');
+	// $('h1').next().next().children().first().next().prev().parent().css('color','red');
+	// $('h1').next().next().children().first().next().prev().parent().children().last().css('color','red');
+	// $('h1').css('color','red').next().css('color','blue').next().children().first().css('background-color','gray');
+	// 이러한 결과로 봤을 때 각각의 펑션이 리턴을 가지고 있다는 것을 알 수 있다.
+		 리턴이 있어야 다음 체이닝의 결과를 연산 할 수 있으므로.
+	// 또한 리턴은 JQuery 객체인 것을 알아야 한다.
+	// document.querySelector('h1')을 이용한 것과는 다른 것 임을 알아야 한다.
+	// 하지만 이런식으로 JQuery객체로 바꿔줄 수 있다.
+	// var ele=document.querySelector('h1');
+	// $(ele);
+	// $(ele).css('color','red');
+---------------------------------------------------------------------------------------------------
+	// $('input[type=text]')	타입이 text인 것.
+	// $('input[type*=word]')	타입에 word가 포함되는.
+	// $('input[type$="r"]')	타입이 ~~r로 끝나는.
+	// $(':submit')			속성이 submit인 것.
+	// $(':empty')			엘리먼트가 비어 있는
+	// $('input:first')		input 중에 첫번째
+	// $('input:lt(2)')		index번호 기준으로 작은	
+	// $('input:gt(2)')		index번호 기준으로 큰
+	// $('input:eq(2)')		index번호가 2인
+	// $('input:not(:password)')	input중에 password가 아닌것.
+	// $('input:odd')		input 중에 index가 짝수
+	// $('input:even')		input 중에 index가 홀수
+---------------------------------------------------------------------------------------------------
+	// CSS 		* 참고 : https://api.jquery.com/css/
+
+	// GET / SET
+	// get (String타입, Array타입이 올 수 있다.) 인자는 1개.
+	// alert(jQuery('h1').css('background-color'))	h1에 백그라운드 컬러를 받아볼 수 있다.
+	// jQuery('h1').css(['background-color'])	Array타입을 넣었을 때.
+	// 단, 내가 넣었던 타입은 아니다.
+	// 이를 자바스크립트로 처리하려고 하면 생각보다 어려운 작업이 될 수 있다.
+	// document.styleSheets > document.styleSheets[0].cssRules[0] > document.styleSheets[0].cssRules[0].cssText;
+
+	// set(String, String) 
+	// $('p').css('color','red');
+	// $('p').css('color','red');
+        // $('p').css('color','#0000ff');
+        // $('p').css('color','rgb(0,255,0)');	
+        // $('p').css('font-size','2em');	폰트사이즈 2배
+	// $('p').css('font-size',22);		이 경우 number를 px로 처리함.
+
+	// set({"key":"value"})
+	// $('p').css({'font-size':'22pt',"color":"red"});
+
+	// set(String, Function)
+	// $('li').css('color',func01);
+	// var arr=[
+                'rgb(0,0,0)',
+                'rgb(40,40,40)',
+                'rgb(80,80,80)',
+                'rgb(120,120,120)',
+                'rgb(160,160,160)',
+                'rgb(200,200,200)'
+            ];
+	// function func01(idx){		// idx는 자동으로 부여되므로 부여된 idx를 가져온것.
+		$(this).css('color',arr[idx]);
+           }
+	// function func01(idx,val){
+                $(this).css('color',arr[idx]).css('font-size',10+idx+'px');
+                }
+	// ele.style.backgroundColor				JavaScript의 경우.
+	// $('h1').css('background-color','gray');		CSS 스타일로 해주는 것이 정석이지만 
+		// $('h1').css('backgroundColor','gray'); 	JavaScript에서 하듯이 해줘도 호환된다.
+---------------------------------------------------------------------------------------------------
+	// 속성부여/확인		* 참고 : https://api.jquery.com/attr/
+					* 참고 : https://api.jquery.com/prop/
+
+	// $('img').attr('src','imgs/B02.jpg');
+	// var link=$('a').attr('href','http://daum.net');
+	// var link=$('a').attr('href');
+	// alert(link);
+	// alert($('button').attr('type'));
+	// var sel=$('select>option:eq(1)').attr('selected');
+	// alert(sel);  => selected				String값을 반환.(해당 속성값) 만약 해당 속성값이 없으면 undefined
+	// $(':radio:eq(1)').prop('checked')			Boolean값으로 반환. 해당속성 O = true , 해당속성 X = false
+	// attr을 사용시 이벤트 상황에서 내가 원했던 결과를 받지 못할경우가 생긴다. 따라서 가능한 prop를 사용하는 것이 좋다.
+	// $(':text').attr('value'); 				==> undefined
+	// $(':text').val(); 					==> 이벤트상황에서 입력된 값을 받을 수 있음.
+	// $(':text').val('ㅁㄴㅇㄹ'); 				==> 이벤트상황에 text에 값을 전달할 수 있음.
+	// $('textarea').val(); 				==> 위와 마찬가지
+	// $('textarea').val('abcd'); 				==> 위와 마찬가지
+		// ex08
+	// $('h1').attr('class','cl01');			==> 클래스 속성을 부여.
+	// $('h1').addClass('cl01');				==> 기존에 있던 클래스속성에 다른 클래스 속성을 추가할 수 있음.
+	// $('p').removeClass('cl02');				==> 반대로 가지고 있는 클래스 속성을 제거할 수 있음.
+	// &('h1').toggleClass('cl01');				==> 이미 해당 클래스 속성을 가지고 있으면 제거, 그렇지 않으면 클래스 속성 부여.
+---------------------------------------------------------------------------------------------------
+	// 엘리먼트 제어
+	
+	// javascript
+		// var ul=document.querySelector('ul');
+                // console.log(ul.innerHTML);
+	// JQuery
+		// var msg=$('ul').html();
+                // console.log(msg);
+	$('ul').html(msg+'<li>edit01</li>');	추가할 때. 전부 지울 때는 앞에 msg를 빼면 edit01만 남는다.
+	console.log($('ul').text());		InnerText의 퍼포먼스를 가져옴.
+
+	// var ele = document.createElement('li');	JavaScript를 통해 엘리먼트 생성. 
+                $(ele).text('edit02');
+                $('ul').html(ele);			javascript와 jquery를 통해서 처리한 것.
+
+	// var h1=$('h1');
+                $('ul>li:eq(1)').html(h1);	위의 상황에서 다음과 같은 일이 생기지 않도록 유의해야한다.
+
+	// var ele=$('<li></li>');		JQuery로 엘리먼트를 생성.
+                $(ele).text('edit02');
+		$('ol').html(ele);
+
+	// $('ol').html($('ul').html());	

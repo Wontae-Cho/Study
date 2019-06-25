@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            /* css의 주석 */
+        </style>
+        <!-- 불러와서 쓸 때는 Import와 비슷하게 사용함. 바로 닫아줘야한다. -->
+        <script type="text/javascript" src="test02.js"></script>
+       <!-- <script type="text/javascript">
+            alert("abcde");
+        </script>
+        -->
+        <!-- 컴파일단위는 한쌍의 스크립트 태그 -->
+        <script type="text/javascript">
+            //qweasdr();
+            // js 한줄주석
+            /*
+                js 다중주석
+            */
+            // 참조변수
+            // 0x000000
+            // ~ 0xffffff
+            var a1; // 변수선언 - null과 undefined를 구분함.
+                    // undefined라는 값을 줄 수 없다.
+            // a1 = 1234;   // number타입(정수, 실수 구분X)
+        // a1 = new Number(3.14); // 래퍼클래스를 활용한다는 것을 확인 가능
+            // a1 = new Date();
+            // a1 = "aaaa"; // String타입 (char X) 
+            // a1 = 'a';    // 문자와 문자열 구분X.("",'')모두사용가능
+            // a1 = "a'sd'f";
+            // a1 = 'as"dfq"we';
+            // a1 = "asdq"wer"az" // 오류.
+            // a1 = "ab\"cde\"fg"; // 리터럴문자활용시에는 가능
+            // a1 = true;   // boolean타입
+            // a1 = new Boolean(false);
+            // a1 = null;     // Object타입 // null타입
+            // a1 = undefined;  // undefined타입
+            // var a2 = null;
+            
+            alert(typeof a1); 
+            // typeof 를 통해 변수의 자료형을 확인할 수 있다.
+        </script>
+        
+    </head>
+    <body>
+        <!-- 스크립트는 어디에 위치해도 상관없지만 가능한 헤드부분에 써주는 것이 좋다. -->
+        <!--<script type="text/javascript">
+            
+        </script>-->
+    </body>
+</html>

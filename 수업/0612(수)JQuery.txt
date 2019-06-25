@@ -1,0 +1,89 @@
+	* 참고 : https://api.jquery.com/category/manipulation/style-properties/
+	//window.onload=function(){		// 스타일에서 설정한 width값과 height값을 받을 수 있다.
+                var box=$('div');		// border나 padding등을 이용했을 경우 그것들을 포함한
+                var w = box.outerWidth();	// width, height를 받을 수 있다.
+                var h = box.outerHeight();	// div뿐만 아니라 내가 스타일태그에서 정의한적 없는 것들도
+		var inw = box.innerWidth();
+                var inh = box.innerHeight();
+                alert('w:'+w+'px ,h:'+h+'px');	// width,height를 받을 수 있다.
+            };
+
+// JQuery의 메소드를 이용한 필요한 항목 선택하기.
+	// $('h2').first();	// 첫번째
+	// $('h2').last();	// 마지막
+	// $('li');		// li가 총 몇개인지 뎁스 상관 없이.
+	// $('li').eq(0);	// 인덱스번호 0번째
+	// $('h1,h2');
+	// $('h1').add('h2');
+	// $('h1').add('h2').not('h1');
+	// $('h1').css('color','red').add('h2').css('background-color','gray');
+	// $('li').find('ul');	// li하위의 ul엘리먼트를 잡아낼 수 있다. - 자식노드
+	// $('li').find('ul>li:eq(1)').css('color','red');
+	// $('li').filter(':even').css('color','red'); // 현재시점에서의
+	// $('li').has('ul'); 	// ul을 가지고 있는 li를 잡을 수 있음.
+	// $('h2').is('h2');	// h2가 맞냐 (true or false)
+
+	// $('li');
+	// $('li').each(function(){console.log('test');});
+	// $('li').each(function(idx){console.log(idx);});
+	// $('li').each(function(idx,ele){console.log(idx,ele);});
+	// $('li').each(function(a,b){console.log(b==this);});		// 위에서의 idx,ele는 JQuery를 객체가 아니기 때문에
+									// JQuery객체로 바꾸기 위해서.
+	// $('li').each(function(a,b){console.log(b===this);});
+	// $('li').each(function(idx){console.log(idx,this);});
+
+	// $('p').next('ul').children().html(function(idx,old){
+		$(this).html(old+'->new'+0+idx);
+		});
+	
+	* 참고 : https://api.jquery.com/append/#append-content-content
+	* 참고 : https://api.jquery.com/appendTo/#appendTo-target
+	* 참고 : https://api.jquery.com/prepend/#prepend-content-content
+	* 참고 : https://api.jquery.com/prependTo/#prependTo-target
+	// $('p').next('ul').html($('p').next('ul').html()+'<li>new01</li>');
+	// $('p').next('ul').append('<li>new01</li>');	// 위와 동일한 역할. 해당위치에 타겟을 넣어라
+	// $('<li>new01</li>').appendTo('p+ul');	// 타겟을 해당 위치에 넣어라.
+		// 틀린 사용의 예시
+	// $('li').appendTo('p+ul');	// 모든 li를 해당위치에 넣어라가 되어버림.
+	// $('p+ul').append('li');	// 이때는 텍스트 노드를 append하는 결과를 가져옴.
+
+	// $('ul').append('<li>add01</li>');	// 해당 위치에 엘리먼트 마지막에 추가
+	// $('ul').prepend('<li>add01</li>');	// 해당 위치에 엘리먼트 처음에 추가
+	// $('<li>add02</li>').prependTo('ul');	
+
+	* 참고 : https://api.jquery.com/after/
+	// $('ul').after('<h2>add</h2>');	// ul 다음에(after) h2태그 추가 
+	// $('ul').before('<h2>add</h2>');	// ul 전에(before) h2태그 추가
+	// $('<h2>add</h2>').insertAfter('ul');	// h2태그를 추가 ul 다음에(after)
+	// $('<h2>add</h2>').insertBefore('ul');// h2태그를 추가 ul 전에(before)
+	// $('ol').insertBefore('ul');		// ol를 추가 ul전에
+	// $('ul>li').after(function(idx){
+                    $(this).after('<li>'+idx+'</li>');
+                });
+
+	* 참고 : https://api.jquery.com/wrap/#wrap-wrappingElement
+	* 참고 : https://api.jquery.com/category/manipulation/dom-removal/
+	// $('p').wrap('<div></div>');		// div로 래핑
+	// $('p').unwrap('<div></div>');	// div로 랩핑되어 있는 것을 언래핑
+	// $('ul').empty('ul'); 		// ul을 비움. 단, 형태는 남아있기 때문에 append를 하면 추가 됨.
+	// $('ul').append('<li>add01</li>')	// 가능.
+	// $('ul').remove();			// ul자체를 지워버림.
+	// $('ul').append('<li>add01</li>')	// 불가능.
+
+	// 마우스 이벤트
+	// window.onload=function(){
+                $('button').click(function(){
+                   console.log($(this).text());
+                });
+            };
+
+	* 참고 : https://api.jquery.com/category/events/event-object/
+	// 키보드 이벤트
+	//  window.onload = function() {
+            $('input').keydown(mykey);
+            $('input').keypress(mykey);
+            $('input').keyup(mykey);
+        };
+        function mykey(){
+            $(this).next('div').html($(this).val());
+        }

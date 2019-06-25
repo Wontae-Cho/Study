@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            // 전역변수로의 접근방법
+            var obj=1234;
+            function myfunc01(){
+                var obj=4321;
+                console.log(this.obj);
+            }
+            
+            myfunc01();
+            console.log("-------------------------------");
+            var obj2=new Object();
+            obj2.key1='abc';
+            obj2.key3=1234;
+            obj2.key2=function(){
+                console.log(this.key1);
+                console.log(this.key3);
+            };
+            obj2.key2();
+            
+            console.log("---------------------------------");
+            var arr=new Array();
+            
+            var stu = newInstance();
+            obj4.setNum(1234);
+            obj4.setKor(90);
+            obj4.setEng(80);
+            arr.push(stu);
+            
+            var stu2 = newInstance();
+            obj4.setNum(2222);
+            obj4.setKor(70);
+            obj4.setEng(60);
+            arr.push(stu2);
+            
+            var stu3 = newInstance();
+            obj4.setNum(3333);
+            obj4.setKor(60);
+            obj4.setEng(90);
+            arr.push(stu3);
+            
+            for(var i=0; i<arr.length; i++){
+                var obj=arr[i];
+                console.log(obj.getNum(),obj.getKor(),obj.getEng());
+            }
+            
+            function newInstance(){
+                var obj4 = {
+                'num':1,
+                'kor':0,
+                'eng':0,
+                    
+                'setNum':function(a){
+                    this.num=a;
+                },
+                'setKor':function(a){
+                    this.kor=a;
+                },
+                'setEng':function(a){
+                    this.eng=a;
+                },
+                'getNum':function(a){
+                    return this.num;
+                },
+                'getKor':function(a){
+                    return this.kor;
+                },
+                'getEng':function(a){
+                    return this.eng;
+                }
+            }
+        </script>
+<!--     // 전역변수.
+            var obj=1234;
+            
+            for(var i=0; i<5; i++){
+         // for문 안에있다고 lifecycle이 for문 안에서 끝나는 것이 아니다.
+                console.log('i='+i);
+            }
+            // 지역변수의 생성. function안에서 사용되는.
+            function myfunc(){
+                var obj=9999;
+                console.log(obj);
+            }
+            myfunc();
+
+            console.log('obj='+obj);
+            
+            // 지역변수의 생성.
+            (function(){
+                var obj = 1234;
+                console.log(obj);
+            })();-->
+    </head>
+    <body>
+        <h1>변수</h1>
+    </body>
+</html>

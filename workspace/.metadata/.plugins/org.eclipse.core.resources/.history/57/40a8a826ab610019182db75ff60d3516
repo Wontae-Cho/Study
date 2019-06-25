@@ -1,0 +1,61 @@
+package com.bit.pm;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Ex01My {
+	static int studNum = 0;
+	static int kor = 0, eng = 0, math = 0;
+
+	public static void main(String[] args) {
+		ArrayList<Integer[]> studata = new ArrayList<Integer[]>();
+		studata.add(new Integer[] { studNum, kor, eng, math });
+		
+		int input = 0;
+		Integer[] show = null;
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+		System.out.println("--------------------------------------");
+		System.out.println("학생성적관리프로그램(ver 1.2.0)");
+		System.out.println("--------------------------------------");
+
+		while (true) {
+//			studata = new ArrayList<Integer[]>();
+			System.out.print("1.보기 2.입력 3.수정 4.삭제 0.종료>");
+			input = sc.nextInt();
+			if (input == 0) {
+				break;
+			}
+			if (input == 1) {
+				System.out.println("--------------------------------------");
+				System.out.println("학번\t|국어\t|영어\t|수학\t");
+				System.out.println("--------------------------------------");
+//				System.out.println(studata.get(0));
+				
+
+
+			} else if (input == 2) {
+				boolean loop = true;
+				++studNum;
+				// System.out.print("학번 입력>");
+				// studNum = sc.nextInt();
+				System.out.println(studNum+"번 학생");
+				System.out.print("국어 점수>");
+				kor = sc.nextInt();
+				System.out.print("영어 점수>");
+				eng = sc.nextInt();
+				System.out.print("수학 점수>");
+				math = sc.nextInt();
+				while (loop) {
+					studata.add(new Integer[] { studNum, kor, eng, math });
+					break;
+				}
+
+			} else if (input == 3) {
+
+			} else if (input == 4) {
+
+			}
+		}
+	}
+
+}

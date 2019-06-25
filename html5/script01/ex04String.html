@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            // 함수 , 메서드
+            var msg;
+            msg = "문자열";
+            msg = '문자열2';
+            msg = new String('문자열3');
+            alert(msg.length); // 대표적인 함수.
+            console.log(msg.charAt(1)); // charAt 등은 메서드.
+            console.log(msg.indexOf("열"));
+            console.log(msg.replace('자','a'));
+            /* 참조변수 필요없이 접근해서 사용하면 함수
+                , 그렇지 않고 참조변수가 필요하다면 메서드*/
+            var obj = '1000원';
+            // 기존의 자바의 parseInt와 달리 문자가 들어가 있을 경우 문자를 빼고 숫자의 부분만 parse처리 해준다.
+            var result = parseInt(obj)-2;
+            result*=2;
+            result*=2;
+            result*=2;
+            console.log(result);
+            // +의 경우에는 '1000'을 String으로 보고 문자열로 처리한다.
+            // 그 외의 사칙연산의 경우는 Number타입으로 처리한다.
+            
+            var msg2 = "java";
+            var msg3 = new String("java");
+            console.log(msg2==msg3); // 밸류값 비교. 
+// 둘 다 객체를 찍어내어서 비교했을 때는 오브젝트의 참조주소값 비교를 하기 때문에 false
+            console.log(msg2===msg3); 
+// 위의 경우 true이지만 타입이 String과 Object다르므로 false값 반환.
+            console.log('----------------------');
+            document.write('a<br/>b&nbsp;&nbsp;&nbsp;c');
+            // \n , \t 등의 이스케이프문자가 통하는 것은 콘솔에서이다.
+        </script>
+    </head>
+    <body>
+        <h1>문자열</h1>
+    </body>
+</html>

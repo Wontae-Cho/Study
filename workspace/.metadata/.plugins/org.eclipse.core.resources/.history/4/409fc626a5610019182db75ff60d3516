@@ -1,0 +1,23 @@
+package com.bit.pm;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Score{
+	
+}
+
+public class Ex01Lecture {
+
+	public static void main(String[] args) {
+		int[] score = new int[3];
+		List<Score> data = new ArrayList<Score>();
+		
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+		System.out.println("--------------------------------------");
+		System.out.println("切积己利包府橇肺弊伐(ver 1.2.0)");
+		System.out.println("--------------------------------------");
+
+	}
+
+}

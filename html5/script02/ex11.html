@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            body>div{
+                width: 800px;
+                margin: 0px auto;
+                background-color: gray;
+                text-align: center;
+                
+            }
+        </style>
+        <script type="text/javascript">
+            function myhide(){
+                var imgs=document.querySelectorAll('#content>img');
+                for(var i=0; i<imgs.length; i++){
+                    imgs[i].style.display='none';
+                }
+            }
+            var cnt=0;
+            function myShow(){
+                var imgs=document.querySelectorAll('#content>img');
+                if(cnt>=imgs.length)cnt=0;
+                myhide();
+                imgs[cnt++].style.display='block';
+            }
+            function myload(){
+                myhide();
+                setInterval(myShow,3000);
+            }
+        </script>
+
+    </head>
+    <body onload="myload()">
+        <div id="header">
+            <h1>비트교육센터</h1>
+        </div>
+        <div id="menu">
+            <a href="ex01BuiltIn.html">menu1</a>
+            <a href="ex02.html">menu2</a>
+            <a href="ex03BOM.html">menu3</a>
+            <a href="ex04Screen.html">menu4</a>
+        </div>
+        <div id="content">
+            <img alt="main" src="img/B01.jpg"/>
+            <img alt="main" src="img/B02.jpg"/>
+            <img alt="main" src="img/B03.jpg"/>
+            <img alt="main" src="img/B04.jpg"/>
+            <img alt="main" src="img/B05.jpg"/>
+            <img alt="main" src="img/B06.jpg"/>
+        </div>
+        <div id="footer">
+            &copy; Copyrignt 비트캠프 ~~
+        </div>
+    </body>
+</html>

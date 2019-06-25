@@ -1,0 +1,39 @@
+package com.bit;
+
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class WebServer {
+
+	public static void main(String[] args) {
+		String msg = "HELLO MY PAGE ! ! !";
+		ServerSocket serve = null;
+		Socket sock = null;
+		OutputStream os = null;
+		DataOutputStream dos = null;
+		
+		try {
+			serve = new ServerSocket(80); 			// 80번 포트를 열어둠
+			sock = serve.accept();					// 들어온 객체를 소켓에 전달.
+			os = sock.getOutputStream();			
+			dos = new DataOutputStream(os);
+			
+			dos.writeUTF(msg);
+			dos.flush();
+			dos.close();
+			os.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally{
+			try {
+				if(serve!=null){serve.close();}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+}

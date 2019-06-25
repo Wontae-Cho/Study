@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            body{
+                text-align: center;
+            }
+            div#edge{
+                width: 100%;
+                margin: auto;
+            }
+            header,nav,footer,div>div{
+                width: 804px;
+                margin: auto;
+                border : 1px solid black;
+            }
+            nav{
+                background-color: skyblue;
+                border : 1px solid black;
+            }
+            nav>ul{
+                width: 641px;
+                padding: 0px;
+                margin: auto;
+                
+            }
+            nav>ul>li{
+                margin: 0px;
+                background-color: skyblue;
+                display: inline-block;
+            }
+            nav>ul>li>a{
+                display: inline-block;
+                width: 100px;
+                height: 50px;
+                background-color: skyblue;
+                text-align: center;
+                line-height: 50px;
+                text-decoration: none;
+                color: black;
+                font-weight: bold;
+            }
+            nav>ul>li>a:hover{
+                height: 45px;
+                border-bottom: 5px solid blue;
+                color: blue;
+            }
+            div>aside,section{
+                height : 590px;
+                border : 1px solid black;
+                display: inline-block;
+                margin: 0px auto;
+            }
+            div>section{
+                width : 575px;
+                float: left;       
+            }
+            div>aside{
+                width : 225px;
+            }
+            footer{
+                background-color: skyblue;
+                text-align: left;
+                height: 50px;
+                line-height: 50px;
+                text-indent: 10px;
+                clear: both
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="edge">
+            <header>
+                <img alt="logo" src="imgs/opgg.jpg">
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="#">홈</a></li>
+                    <li><a href="#">챔피언분석</a></li>
+                    <li><a href="#">통계</a></li>
+                    <li><a href="#">랭킹</a></li>
+                    <li><a href="#">프로관전</a></li>
+                    <li><a href="#">커뮤니티</a></li>
+                </ul>
+            </nav>
+            <br/>
+            <div>
+                <section>
+                    <h1>ANT는 개미새끼</h1>
+                </section>
+                <aside>
+                    <img alt="advertisement" src="imgs/ad.png">
+                </aside>
+            </div>
+            <footer>
+                Copyright &copy; 2012-2019 OP.GG. Data based on League of Legends Korea
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div>div{
+                width: 100px;
+                height: 100px;
+                background-color: aqua;
+                /* 인라인속성과 블록라인의 속성을 동시에 지님. */
+                display: inline-block;
+            }
+            div>a{
+                /* 앵커태그가 높이와 넓이를 가지니 버튼의 기능과 유사해짐. */
+                width: 100px;
+                height: 50px;
+                background-color: blue;
+                color: white;
+                display: inline-block;
+                font-weight: bold;
+                text-decoration: none;
+                text-align: center;
+                /* 세로기준으로 가운데정렬을 할 경우 내가 준 높이를 주면 된다. */
+                line-height: 50px;
+            }
+            body>div:last-child{
+                background-color: yellow;
+                width: 400px;
+                margin : 0px auto;
+            }
+            div>a:hover,div>a:active{
+                background-color: red;
+                color : yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div>box1</div>
+            <div>box2</div>
+            <div>box3</div>
+            <div>box4</div>
+            <div>box5</div>
+        </div>
+        <div><a href="#">link1</a><a href="#">link2</a><a href="#">link3</a><a href="#">link4</a></div>
+    </body>
+</html>

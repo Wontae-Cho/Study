@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                width: 200px;
+                height: 200px;
+                /* 4번째인자가 투명도를 결정한다.(0~1)*/
+                background-color: rgb(255,0,0,0.3);
+            }
+            span{
+                display: block;
+                width: 200px;
+                height: 200px;
+                background-color: red;
+                /* 글자 또한 투명도에 적용을 받게 된다. */
+                /* opacity를 0으로하면 화면에 보이지 않게할수있다.(공간차지) */
+                /* opacity: 0.5;*/
+                /* visibility를 hidden으로 하면 숨길 수 있다. (공간차지) */
+                /* visibility: hidden; */
+                /* display를 none으로 하면 숨길 수 있다. (공간차지X) */
+                display: none;
+            }
+            img{
+                opacity: 0.5;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>투명도</h1>
+        <div>box</div>
+        <span>span</span>
+        <img alt="main" src="imgs/main.jpg"/>
+    </body>
+</html>

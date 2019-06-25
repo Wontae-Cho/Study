@@ -1,0 +1,36 @@
+package com.bit;
+
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class WebServer {
+
+	public static void main(String[] args) {
+		String msg = "HELLO MY PAGE ! ! !";
+		ServerSocket serve = null;
+		Socket sock = null;
+		OutputStream os = null;
+		DataOutputStream dos = null;
+		
+		try {
+			// 80¹ø Æ÷Æ®
+			serve = new ServerSocket(80);
+			sock = serve.accept();
+			os = sock.getOutputStream();
+			dos = new DataOutputStream(os);
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally{
+			try {
+				if(serve!=null){serve.close();}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+}

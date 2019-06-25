@@ -1,0 +1,19 @@
+package com.bit;
+
+public class MyMain {
+
+	public static void main(String[] args){
+		//Car car=new Car();
+		String info="com.bit.Car";
+		Class clz;
+		try {
+			clz = Class.forName(info);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Object obj = clz.newInstance();
+		Car car = (Car)obj;
+		car.startCar();
+	}
+}

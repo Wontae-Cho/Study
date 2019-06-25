@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+        var obj1;
+            obj1 = 1234;
+            obj1 = 3.14;
+            obj1 = 1+2;
+            obj1 = 1.5+3;
+            obj1 = 1.0+2;
+            obj1 = 3/2;
+            obj1 = 4.0/2;
+            obj1 = 5%2;
+            obj1 = (5-(5%2))/2;
+            obj1 = parseInt(5/2); // 내장함수
+            // 결과는 1+2와 같지만 퍼포먼스는 다르다.
+            obj1 = new Number(1)+new Number(2);
+            // 연산자
+            obj1 = 2;
+            var obj2 = 3;
+            obj2++;
+            obj1--;
+            --obj2;
+            ++obj1;
+            obj2+=1;
+            obj2-=1;
+            obj2*=1;
+            obj2/=1;
+            obj2=+(obj1);
+            obj2=-(obj1);
+            console.log(obj1 + obj2);
+            console.log(obj1 - obj2);
+            console.log(obj1 * obj2);
+            console.log(obj1 % obj2);
+            console.log(obj1 / obj2); // 정수도, 실수도 올 수 있음.
+            var su1=1;
+            var su2=0;
+            console.log('---------------------');
+            console.log(isNaN(0/0));    // 0/0
+            console.log(!isFinite(1/0)); // 1/0 무한인가?
+            console.log(Number.isInteger(su1)); // su1은 숫자가 맞는가?
+        </script>
+    </head>
+    <body>
+        <h1>Number</h1>
+    </body>
+</html>

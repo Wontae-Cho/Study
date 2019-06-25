@@ -1,0 +1,32 @@
+package com.bit.pm;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class Score{
+	private int num;
+	int kor, eng, math;
+	
+	public Score(int num) {
+	
+	}
+}
+
+public class Ex01Lecture3 {
+
+	public static void main(String[] args) {
+		// int[] 己利 = new int[3];
+		List<int[]> data = new ArrayList<int[]>();
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("--------------------------------------");
+		System.out.println("切积己利包府橇肺弊伐(ver 1.2.1)");
+		System.out.println("--------------------------------------");
+		String input = null;
+		int num = 201900;
+
+
+	}
+
+}

@@ -1,0 +1,77 @@
+package com.bit;
+
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class WebServer {
+
+	public static void main(String[] args) {
+//		String msg = "HELLO MY PAGE ! ! !";
+		String root = "www";
+		String index = "index.txt";
+		
+		File file = null;
+		ServerSocket serve = null;
+		Socket sock = null;
+		OutputStream os = null;
+		DataOutputStream dos = null;
+		InputStream is = null;
+		byte[] buf = new byte[256];
+		InputStreamReader isr = null;
+		BufferedReader br = null;
+		
+		try {
+			System.out.println("서버 시작");
+			serve = new ServerSocket(80); 			// 80번 포트를 열어둠
+			sock = serve.accept();					// 들어온 객체를 소켓에 전달.
+			os = sock.getOutputStream();
+			is = sock.getInputStream();
+			isr = new InputStreamReader(is);
+			br = new BufferedReader(isr);
+//			System.out.println(">>>"+br.readLine());
+			String msg2 = br.readLine();
+			String[] arr = msg2.split(" ");
+			////
+			if(arr[1].equals("/")){
+				arr[1]="/"+index;
+			}
+			file = new File("./"+root+arr[1]);
+			
+//			dos = new DataOutputStream(os);
+//			
+//			dos.writeUTF(msg);
+//			dos.flush();
+			is = new FileInputStream(file);
+			int su = 0;
+			// 눈에 보이지 않는 영역의 데이터 전송 = HEADER 부분.
+				// 정보의 타입, 종류, 전송방식 등을 결정.
+			os.write("HTTP/1.1 200 OK \r\n".getBytes());
+			os.write("\r\n".getBytes());
+			
+			while((su=is.read(buf))!=-1){
+				os.write(buf,0,su);
+			}
+			
+			System.out.println("메시지 전달 완료");
+//			dos.close();
+			os.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally{
+			try {
+				if(serve!=null){serve.close();}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+}

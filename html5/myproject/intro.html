@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            *{
+                width = 100%;
+                padding: 0px;
+                margin: 0px auto;
+                text-align: center;
+            }
+            #nav{
+                background-color: skyblue;
+                border : 1px solid black;
+            }
+            #nav>ul{
+                padding: 0px;
+            }
+            #nav>ul>li{
+                display: inline-block;
+                margin: 0px;
+            }
+            #nav>ul>li>a{
+                display: inline-block;
+                width: 100px;
+                height: 50px;
+                background-color: skyblue;
+                text-align: center;
+                line-height: 50px;
+                text-decoration: none;
+                color: black;
+                font-weight: bold;
+            }
+            #nav>ul>li>a:hover,#nav>ul>li>active{
+                background-color: bisque;
+            }
+            #section>div{
+                width: 100%;
+            }
+            
+            
+        </style>
+        <script type="text/javascript">
+        var target;
+        var cnt=0;
+        var arr=[ //1~11
+            // 1 2 3
+'<img src="myproject_img/entrance01.jpg">,<img src="myproject_img/entrance02.jpg">,<img src="myproject_img/kettle01.jpg">',
+            //2 3 4
+'<img src="myproject_img/entrance02.jpg">,<img src="myproject_img/kettle01.jpg">,<img src="myproject_img/kettle02.jpg">',
+            //3 4 5
+'<img src="myproject_img/kettle01.jpg">,<img src="myproject_img/kettle02.jpg">,<img src="myproject_img/representation.jpg">',
+            //4 5 6
+'<img src="myproject_img/kettle02.jpg">,<img src="myproject_img/representation.jpg">,<img src="myproject_img/sulung01.jpg">',
+            //5 6 7
+'<img src="myproject_img/representation.jpg">,<img src="myproject_img/sulung01.jpg">,<img src="myproject_img/sulung02.jpg">',
+            //6 7 8
+'<img src="myproject_img/sulung01.jpg">,<img src="myproject_img/sulung02.jpg">,<img src="myproject_img/sulung03.jpg">',
+            //7 8 9
+'<img src="myproject_img/sulung02.jpg">,<img src="myproject_img/sulung03.jpg">,<img src="myproject_img/suyuk01.jpg">',
+            //8 9 10
+'<img src="myproject_img/sulung03.jpg">,<img src="myproject_img/suyuk01.jpg">,<img src="myproject_img/suyuk02.jpg">',
+            //9 10 11
+'<img src="myproject_img/suyuk01.jpg">,<img src="myproject_img/suyuk02.jpg">,<img src="myproject_img/suyuk03.jpg">',
+            //10 11 1
+'<img src="myproject_img/suyuk02.jpg">,<img src="myproject_img/suyuk03.jpg">,<img src="myproject_img/entrance01.jpg">',
+            //11 1 2
+'<img src="myproject_img/suyuk03.jpg">,<img src="myproject_img/entrance01.jpg">,<img src="myproject_img/entrance02.jpg">'
+        ];
+        function myload(){
+            target=document.querySelector("#imgBox");
+            myloop();
+        }
+        function myloop(){
+            target.innerHTML=arr[cnt];
+            if(cnt<10){
+                cnt++;    
+            }else{
+                cnt=0;
+            }
+            setTimeout(myloop,3000);
+        }
+        </script>
+    </head>
+    <body onload="myload()">
+        <div id="frame">
+            <br/>
+            <div id=header>
+                <h1>이미지로고</h1>
+            </div>
+            <br/>
+            <div id="nav">
+                <ul>
+                    <li><a href="intro.html">홈</a></li>
+                    <li><a href="history.html">역사</a></li>
+                    <li><a href="comming.html">오시는길</a></li>
+                    <li><a href="menu.html">메뉴소개</a></li>
+                    <li><a href="reservation.html">예약하기</a></li>
+                    <li><a href="packing.html">포장주문</a></li>
+                </ul>
+            </div>
+            <br/>
+            <div id="section">
+                <div id="imgBox">
+                    
+                </div>
+            </div>
+            <br/>
+            <div id="footer">
+                &copy; Copyrignt 군포식당(Gunpo-sikdang)
+            </div>
+        </div>
+    </body>
+</html>

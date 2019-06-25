@@ -1,0 +1,50 @@
+주 소 // https://github.com/Wontae-Cho/Wontae-s-Github.git
+
+명 령 어 // 
+	git version = 현재 설치된 깃의 버전을 알 수 있다.
+	git clone https://깃 주소. = 깃허브에 연동되는 저장공간을 만든다.
+	git status = 현재 추가하거나, 혹시 코드를 변경한 파일이 빨간색으로 뜬다.
+		   = git add를 통해서 커밋할 준비가 된 파일은 초록색으로 뜬다.
+	git add *(모든 파일) // git add 특정파일명.확장자 = 내 깃 저장공간으로 저장함.
+	git commit = git status를 통해서 커밋이 준비된 파일(초록색)을 
+	실제로 저장공간에 올리는 것. 단, 저장공간은 github이 아닌 내 컴퓨터를 의미한다.
+	사용 예> git commit -m "Add_newfile_HelloWorld" ==> 일종의 설명을 -m로 주는 것.
+	git push = 내 컴퓨터에 저장된 파일들을 이제 github에 올리는 것.
+	
+	// BRANCH
+	git branch = 현재 사용하고 있는 브랜치를 확인할 수 있음. 
+		= 새로 만든적이 없으면 master 브랜치.
+	git branch (새로운브랜치명) = 내가 만들고 싶은 브랜치를 만들 수 있음.
+	git checkout (내가만든브랜치명) = 내가 만들 브랜치로 이동.
+	git push --set-upstream origin (내가만든브랜치명) = 실제로 내가 만든 브랜치를 사이트에 반영
+	
+	git merge (내가만든브랜치명) = 현재 사용하고 있는 브랜치에 (내가만든브랜치)를 통합한다.
+		= merge 상황에서 commit은 자동으로 해줌.
+		= 이 때, 내 컴퓨터에만 반영된 상태이므로 git push를 해줘야함.
+	git log = 누가, 언제, 어떤 작업을 했는지 알 수 있다.
+
+	// RESET(hard , soft)
+	git reset --hard 돌아가고싶은부분commitid
+		= hard 리셋은 hard 리셋은 그냥 싹쓸히 내가 돌아가고 싶은 부분 뒤에 있는 내용을 증거도 없이 날려버린다.
+
+	hard reset 후 그 내용을 다시 웹에 올릴 때 오류가 자주 발생하는데, 그 경우 git push --force를 이용해야함.
+
+	git reset --soft 돌아가고싶은부분commitid
+		= soft 리셋은 돌아가고싶은부분으로 돌아가는데 파일의 내용은 변하지 않는다.
+		  간단히 해당하는 시점의 commit이전으로 돌아간다.
+
+	// REVERT
+	git revert 현재위치commitID 돌아가고싶은곳commitID
+
+
+
+
+
+
+		
+
+		
+
+
+
+

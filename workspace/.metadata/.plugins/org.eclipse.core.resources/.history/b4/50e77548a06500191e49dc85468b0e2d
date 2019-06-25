@@ -1,0 +1,66 @@
+package com.bit.scanner;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
+import java.util.Scanner;
+
+public class Ex09 {
+
+/*
+ * (문자열 스트림) data = txt파일에.
+ * 학생성적관리프로그램(ver0.3.2)
+ * 
+ * 
+ * 
+ * 
+ */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//읽어와야하는데. 없으면 생성. read.
+		File file = new File("backup2");
+		file.mkdir();
+		file = new File("backup2\\studata.txt");
+		Reader fr = null;
+		BufferedReader br = null;
+		if(file.exists()){ //파일이 존재할때. - 읽어옴.
+			try {
+				fr = new FileReader(file);
+				br = new BufferedReader(fr);
+				while(true){
+					String msg = br.readLine();
+				}
+				
+			} catch (FileNotFoundException e) {
+
+				e.printStackTrace();
+			}finally{
+				try {
+					if(br!=null){br.close();}
+					if(fr!=null){fr.close();}
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			
+		}else{	//파일이 존재하지 않을때. - 생성
+			try {
+				file.createNewFile();
+				System.out.println("생성");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
+		System.out.println("---------------------------------------------");
+		System.out.println("학생성적관리프로그램(ver 0.3.2)");
+		System.out.println("---------------------------------------------");
+
+	}
+
+}

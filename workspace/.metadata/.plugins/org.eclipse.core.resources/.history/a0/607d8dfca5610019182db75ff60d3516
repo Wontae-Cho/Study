@@ -1,0 +1,21 @@
+package com.bit.pm;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+
+public class Ex01Lecture {
+
+	public static void main(String[] args) {
+//		int[] score = new int[3];
+		List<Integer> data = new ArrayList<Integer>();
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("--------------------------------------");
+		System.out.println("切积己利包府橇肺弊伐(ver 1.2.0)");
+		System.out.println("--------------------------------------");
+
+	}
+
+}

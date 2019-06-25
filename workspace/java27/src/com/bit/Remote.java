@@ -1,0 +1,33 @@
+package com.bit;
+
+import java.util.Scanner;
+
+interface Inter{
+	void on();
+}
+class Tv implements Inter{
+	public void on() {
+		System.out.println("tv를 켜다");
+	}
+}
+class Radio implements Inter{
+	public void on() {
+		System.out.println("Radio를 켜다");
+	}
+}
+class Audio implements Inter{
+	public void on() {
+		System.out.println("Audio를 켜다");
+	}
+}
+
+public class Remote {
+	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException{
+		Scanner sc = new Scanner(System.in);
+		String input = sc.nextLine();
+		Class clz = Class.forName(input);
+		Inter remote = (Inter) clz.newInstance();
+		remote.on();
+	}
+
+}

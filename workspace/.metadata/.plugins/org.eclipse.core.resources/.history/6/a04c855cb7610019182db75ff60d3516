@@ -1,0 +1,25 @@
+package com.bit.pm;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Ex01Lecture4 {
+
+	public static void main(String[] args) {
+		List<String> data = new ArrayList<String>();
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("--------------------------------------");
+		System.out.println("切积己利包府橇肺弊伐(ver 1.2.0)");
+		System.out.println("--------------------------------------");
+		String input = null;
+		int num = 201900;
+
+		while (true) {
+		
+		}
+
+	}
+
+}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                width: 100px;
+                height: 100px;
+                /* 디폴트는 static */
+                /* static에서는 left와 top을 사용불가 */
+                position: static;
+            }
+            div:nth-child(1){
+                background-color: rgb(255,0,0);
+            }
+            div:nth-child(2){
+                background-color: rgb(0,255,0,1);
+                /* absolute = 절대좌표 */
+                /* 절대좌표는 절대좌표들끼리 있게됨. */
+                /*지정하지않으면 원래 있어야 할 위치에 자리함*/
+                position: absolute;
+                /*top :150px;*/
+                left:150px;
+            }
+            div:nth-child(3){
+                background-color: rgb(0,0,255);
+                /* 스크롤의 움직임과 상관없이 자리에 고정 */
+                position: fixed;
+            }
+            div:nth-child(4){
+                background-color: rgb(255,0,255);
+                /* relative = 상대좌표 */
+                /* 절대좌표는 기준이 0,0인데에 반해
+                상대좌표는 본래의 자기자신의 위치가 기준이다.*/
+                position: relative;
+                left:150px; 
+            }
+            div:nth-child(5){
+                background-color: rgb(255,255,0);
+            }
+        </style>
+    </head>
+    <body>
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+        <div>box5</div>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </body>
+</html>

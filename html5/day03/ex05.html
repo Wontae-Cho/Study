@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            body{
+                border: 1px solid black;
+                text-align: center;
+                width: 800px;
+            }
+            div>ul{
+                background-color: beige;
+            }
+            nav>div>ul{
+                background-color: aquamarine;
+                padding: 0px;
+                overflow: auto;
+                width : 416px;
+                margin : 0 auto;
+            }
+            nav>div>ul>li{
+                background-color: yellow;
+                float: left;
+                width: 100px;
+                list-style: none;
+                margin: 0px 2px;
+            }
+            nav>div>ul>li>a{
+                color: chartreuse;
+                background-color: blueviolet;
+                display: inline-block;
+                text-decoration: none;
+                width: 100px;
+                height: 50px;
+                font-weight: bold;
+                text-align: center;
+                line-height: 50px;
+            }
+            nav>div>ul>li>a:hover,nav>div>ul>li>a:active{
+                background-color: darkgrey;
+            }
+            body>div{
+                float: left;
+                display: inline-block;
+                background-color: antiquewhite;
+            }
+            div>section>img{
+                width: 100px;
+            }
+            aside>a{
+                display: inline-block;
+            }
+            footer{
+                clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <img alt="logo" src="imgs/opgg.jpg"/>
+        </header>
+        <nav>
+            <div>
+                <ul>
+                    <li>
+                        <a href="#">HOME</a>
+                    </li>
+                    <li>
+                        <a href="#">SEARCH</a>
+                    </li>
+                    <li>
+                        <a href="#">CHAMPION</a>
+                    </li>
+                    <li>
+                        <a href="#">OBSERVING</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div>
+            <section>
+                <h2>환영합니다</h2>
+                <img alt="main" src="imgs/main.jpg"/>
+            </section>
+            <aside>
+                <a href="http://naver.com">naver</a>
+                <a href="http://google.com">google</a>
+                <a href="http://daum.net">daum</a>
+            </aside>
+        </div>
+        <footer>
+            &copy; Copyright All right League Of Legends
+        </footer>
+    </body>
+</html>
